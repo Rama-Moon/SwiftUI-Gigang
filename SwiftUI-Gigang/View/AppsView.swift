@@ -47,12 +47,13 @@ struct AppsView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: 10) {
                             ForEach(0..<6, id: \.self) { columnIndex in
-                                VStack(spacing: 10) {
+                                VStack(spacing: 14) {
                                     ForEach(0..<3, id: \.self) { rowIndex in
                                         AppRowView(style: .grid)
                                             .frame(width: UIScreen.main.bounds.width - 40)
                                     }
                                 }
+                                .padding(.top, 5)
                                 .scrollTargetLayout()
                             }
                         }
