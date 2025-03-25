@@ -24,9 +24,24 @@ struct AppCardView: View {
                 .font(.title)
                 .foregroundStyle(.secondary)
             
-            RoundedRectangle(cornerRadius: 8)
-                .frame(width: UIScreen.main.bounds.width - 40, height: 227)
-                .padding(.top, 10)
+            ZStack(alignment: .bottom) {
+                Image(.imgThumnail)
+                    .resizable()
+                    .frame(height: 227)
+                    .clipShape(RoundedRectangle(cornerRadius: 4))
+                    .padding(.top, 10)
+                
+                ZStack {
+                    Rectangle()
+                        .fill(
+                            LinearGradient(colors: [.white.opacity(0.0), .white.opacity(0.5)], startPoint: .top, endPoint: .bottom)
+                        )
+                        .frame(width: .infinity, height: 74)
+                    
+                    AppRowView(style: .card)
+                        .padding(.horizontal, 20)
+                }
+            }
         }
     }
 }
