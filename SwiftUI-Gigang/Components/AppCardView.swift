@@ -36,8 +36,8 @@ struct AppCardView: View {
                         .fill(
                             LinearGradient(colors: [.white.opacity(0.0), .white.opacity(0.5)], startPoint: .top, endPoint: .bottom)
                         )
-                        .frame(width: .infinity, height: 74)
-                    
+                        .frame(height: 74)
+
                     AppRowView(style: .card)
                         .padding(.horizontal, 20)
                 }
