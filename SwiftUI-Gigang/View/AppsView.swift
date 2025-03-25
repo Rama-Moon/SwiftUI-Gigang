@@ -20,7 +20,6 @@ struct AppsView: View {
                                     .scrollTargetLayout()
                             }
                         }
-                        .fixedSize(horizontal: false, vertical: true)
                         .padding(.horizontal, 20)
                     }
                     .scrollTargetBehavior(.viewAligned)
