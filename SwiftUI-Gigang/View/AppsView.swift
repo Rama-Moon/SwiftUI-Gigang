@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct AppsView: View {
-    let rows: [GridItem] = Array(repeating: GridItem(.fixed(76), spacing: 0), count: 3)
     
     var body: some View {
         NavigationView {
@@ -16,13 +15,15 @@ struct AppsView: View {
                 LazyVStack(alignment: .leading, spacing: 0) {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: 10) {
-                            ForEach(0..<2, id: \.self) { index in
+                            ForEach(0..<5, id: \.self) { index in
                                 AppCardView()
+                                    .scrollTargetLayout()
                             }
                         }
                         .fixedSize(horizontal: false, vertical: true)
                         .padding(.horizontal, 20)
                     }
+                    .scrollTargetBehavior(.viewAligned)
                     
                     Group {
                         Divider()
@@ -45,15 +46,20 @@ struct AppsView: View {
                     .padding(.horizontal, 20)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHGrid(rows: rows, spacing: 10) {
-                            ForEach(0..<6) { index in
-                                AppRowView(style: .grid)
-                                    .frame(width: UIScreen.main.bounds.width - 40)
+                        LazyHStack(spacing: 10) {
+                            ForEach(0..<6, id: \.self) { columnIndex in
+                                VStack(spacing: 10) {
+                                    ForEach(0..<3, id: \.self) { rowIndex in
+                                        AppRowView(style: .grid)
+                                            .frame(width: UIScreen.main.bounds.width - 40)
+                                    }
+                                }
+                                .scrollTargetLayout()
                             }
                         }
                         .padding(.horizontal, 20)
                     }
-                }
+                    .scrollTargetBehavior(.viewAligned)                }
             }
             .navigationTitle("Apps")
             .navigationBarTitleDisplayMode(.automatic)
