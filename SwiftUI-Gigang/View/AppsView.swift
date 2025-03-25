@@ -47,7 +47,8 @@ struct AppsView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: rows, spacing: 10) {
                             ForEach(0..<6) { index in
-                                AppRowView()
+                                AppRowView(style: .grid)
+                                    .frame(width: UIScreen.main.bounds.width - 40)
                             }
                         }
                         .padding(.horizontal, 20)
