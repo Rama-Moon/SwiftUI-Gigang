@@ -9,7 +9,25 @@ import SwiftUI
 
 struct AppCardView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 0) {
+            Text("TEXT BY EDITORIAL")
+                .font(.caption)
+                .foregroundStyle(.blue)
+                .fontWeight(.semibold)
+                .padding(.top, 14)
+            
+            Text("Title")
+                .font(.title)
+                .foregroundStyle(.black)
+            
+            Text("Text by editorial")
+                .font(.title)
+                .foregroundStyle(.secondary)
+            
+            RoundedRectangle(cornerRadius: 8)
+                .frame(width: UIScreen.main.bounds.width - 40, height: 227)
+                .padding(.top, 10)
+        }
     }
 }
 
