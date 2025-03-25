@@ -21,7 +21,6 @@ struct AppsView: View {
                             }
                         }
                         .fixedSize(horizontal: false, vertical: true)
-                        .background(.red)
                         .padding(.horizontal, 20)
                     }
                     
@@ -38,8 +37,9 @@ struct AppsView: View {
                             Spacer()
                             
                             Text("See All")
-                                .font(.title2)
+                                .font(.title3)
                                 .padding(.top, 6)
+                                .foregroundStyle(.blue)
                         }
                     }
                     .padding(.horizontal, 20)
@@ -47,18 +47,15 @@ struct AppsView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHGrid(rows: rows, spacing: 10) {
                             ForEach(0..<6) { index in
-                                RoundedRectangle(cornerRadius: 8)
-                                    .fill(Color.gray)
-                                    .frame(width: 353)
+                                AppRowView()
                             }
                         }
                         .padding(.horizontal, 20)
                     }
                 }
-                .background(.blue)
             }
             .navigationTitle("Apps")
-            .navigationBarTitleDisplayMode(.automatic)   
+            .navigationBarTitleDisplayMode(.automatic)
         }
     }
 }
