@@ -35,16 +35,6 @@
 			path = "SwiftUI-Gigang";
 			sourceTree = "<group>";
 		};
-		217479352D87131900F57F58 /* SwiftUI-GigangTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "SwiftUI-GigangTests";
-			sourceTree = "<group>";
-		};
-		2174793F2D87131900F57F58 /* SwiftUI-GigangUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "SwiftUI-GigangUITests";
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				217479242D87131900F57F58 /* SwiftUI-Gigang */,
-				217479352D87131900F57F58 /* SwiftUI-GigangTests */,
-				2174793F2D87131900F57F58 /* SwiftUI-GigangUITests */,
 				217479232D87131900F57F58 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +118,6 @@
 			dependencies = (
 				217479342D87131900F57F58 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				217479352D87131900F57F58 /* SwiftUI-GigangTests */,
-			);
 			name = "SwiftUI-GigangTests";
 			packageProductDependencies = (
 			);
@@ -152,9 +137,6 @@
 			);
 			dependencies = (
 				2174793E2D87131900F57F58 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				2174793F2D87131900F57F58 /* SwiftUI-GigangUITests */,
 			);
 			name = "SwiftUI-GigangUITests";
 			packageProductDependencies = (

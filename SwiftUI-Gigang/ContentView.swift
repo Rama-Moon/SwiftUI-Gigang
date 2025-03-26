@@ -8,17 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+  let tabViews = Array(1...3)
+    
+  var body: some View {
+    VStack {
+      HStack {
+        Text("Apps")
+          .font(.largeTitle)
+          .bold()
+        
+        Spacer()
+        
+        Button(action: {
+          
+          print("프로필")
+        }) {
+          Circle()
+            .fill(Color.gray)
+            .frame(width: 50, height: 40)
         }
-        .padding()
+      }
+      .padding()
+      
+      FeaturedCardView()
+      AppCardView(apps: appList)
+      Spacer()
     }
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
+
