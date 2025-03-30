@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUI_GigangApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
         }
     }
 }
