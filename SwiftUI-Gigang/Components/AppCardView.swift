@@ -8,20 +8,22 @@
 import SwiftUI
 
 struct AppCardView: View {
+    let app: FeaturedAppModel
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text("TEXT BY EDITORIAL")
+            Text(app.tagText)
                 .font(.caption)
                 .foregroundStyle(.blue)
                 .fontWeight(.semibold)
                 .padding(.top, 14)
             
-            Text("Title")
-                .font(.title)
+            Text(app.title)
+                .font(.title2)
                 .foregroundStyle(.black)
             
-            Text("Text by editorial")
-                .font(.title)
+            Text(app.subTitle)
+                .font(.title2)
                 .foregroundStyle(.secondary)
             
             ZStack(alignment: .bottom) {
@@ -39,15 +41,16 @@ struct AppCardView: View {
                         )
                         .frame(height: 74)
 
-                    AppRowView(style: .card)
+                    AppRowView(style: .card, app: AppModel(name: app.name, category: app.category, developer: app.developer, iconName: "img_app_icon"))
                         .padding(.horizontal, 20)
                 }
             }
             .clipShape(RoundedRectangle(cornerRadius: 4))
         }
+        .frame(maxWidth: .infinity)
     }
 }
 
 #Preview {
-    AppCardView()
+    AppCardView(app: FeaturedAppModel(name: "Featured App1", category: "category1", developer: "developer1", iconName: "img_app_icon", tagText: "HAPPENING NOW", title: "TVING", subTitle: "2025 KBO 리그, 라이브로 보세요"))
 }
