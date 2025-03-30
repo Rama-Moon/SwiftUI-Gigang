@@ -30,6 +30,7 @@ struct AppCardView: View {
                     .frame(height: 227)
                     .clipShape(RoundedRectangle(cornerRadius: 4))
                     .padding(.top, 10)
+                    
                 
                 ZStack {
                     Rectangle()
@@ -42,6 +43,7 @@ struct AppCardView: View {
                         .padding(.horizontal, 20)
                 }
             }
+            .clipShape(RoundedRectangle(cornerRadius: 4))
         }
     }
 }
