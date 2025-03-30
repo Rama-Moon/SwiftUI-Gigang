@@ -73,6 +73,17 @@ struct AppsDetailView: View {
                     }
                     .padding(.top, 20)
                 }
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: 10) {
+                        Image(.imgScreenshot)
+                        Image(.imgScreenshot)
+                        Image(.imgScreenshot)
+                        Image(.imgScreenshot)
+                    }
+                    .padding(.horizontal, 20)
+                }
+                .padding(.top, 20)
             }
         }
     }
