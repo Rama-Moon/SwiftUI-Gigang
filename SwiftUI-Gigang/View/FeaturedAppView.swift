@@ -10,6 +10,7 @@ import SwiftUI
 struct FeaturedAppView: View {
     let app: FeaturedAppModel
     let onClose: () -> Void
+    @Binding var selectedApp: AppModel?
 
     var body: some View {
         ZStack {
@@ -78,6 +79,12 @@ struct FeaturedAppView: View {
                 AppRowView(style: .featured, app: AppModel(name: app.name, category: app.category, developer: app.developer, iconName: "img_app_icon"))
                     .padding(.vertical, 20)
             }
+            //터치 영역 잡기
+            .contentShape(Rectangle())
+            .onTapGesture {
+                selectedApp = AppModel(name: app.name, category: app.category, developer: app.developer, iconName: app.iconName)
+                onClose()
+            }
             .padding(.horizontal, 20)
         }
         .clipShape(.rect(cornerRadius: 8))
@@ -85,5 +92,5 @@ struct FeaturedAppView: View {
 }
 
 #Preview {
-    FeaturedAppView(app: FeaturedAppModel(name: "Featured App1", category: "category1", developer: "developer1", iconName: "img_app_icon", tagText: "HAPPENING NOW", title: "TVING", subTitle: "2025 KBO 리그, 라이브로 보세요"), onClose: {})
+    FeaturedAppView(app: FeaturedAppModel(name: "Featured App1", category: "category1", developer: "developer1", iconName: "img_app_icon", tagText: "HAPPENING NOW", title: "TVING", subTitle: "2025 KBO 리그, 라이브로 보세요"), onClose: {}, selectedApp: .constant(nil))
 }
