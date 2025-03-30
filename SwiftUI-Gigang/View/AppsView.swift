@@ -10,7 +10,7 @@ import SwiftUI
 struct AppsView: View {
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             AppsContentView()
                 .navigationTitle("Apps")
                 .navigationBarTitleDisplayMode(.automatic)
