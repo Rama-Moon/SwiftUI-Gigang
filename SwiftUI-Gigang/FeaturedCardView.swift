@@ -9,37 +9,58 @@ import SwiftUI
 
 struct FeaturedCardView: View {
   var body: some View {
-    let tabViews = Array(1...3)
-    
-    TabView(){
-      ForEach(tabViews, id: \.self) { index in
-        VStack {
-          Text("TEXT BY EDITORIAL")
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .font(.system(size: 15))
-            .fontWeight(.light)
-            .foregroundColor(.blue)
-          
-          Text("Title \(index)")
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .font(.system(size: 30))
-            .bold()
-          
-          Text("Text by editorial")
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .font(.system(size: 30))
-            .foregroundColor(.gray)
-          
-          Image("gradientCell")
+    LazyVStack {
+      Text("TEXT BY EDITORIAL")
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .font(.system(size: 15))
+        .fontWeight(.light)
+        .foregroundColor(.blue)
+      
+      Text("Title")
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .font(.system(size: 30))
+        .bold()
+      
+      Text("Text by editorial")
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .font(.system(size: 30))
+        .foregroundColor(.gray)
+      
+      Button(action: {}) {
+        ZStack(alignment: .bottom) {
+          Image(.gradientCell)
             .resizable()
-            .frame(width: .infinity, height: 227)
-            .cornerRadius(15)
+            .frame(height: 250)
+            .cornerRadius(10)
+          
+          HStack {
+            Rectangle()
+              .frame(width: 40, height: 40)
+              .foregroundColor(Color.gray)
+              .cornerRadius(10)
+            
+            VStack {
+              Text("Title")
+                .font(.title)
+                .foregroundColor(Color.black)
+              Text("Subtitle")
+            }
+            
+            Spacer()
+            
+            Button(action: {}) {
+              Text("Get")
+                .font(.title2)
+                .frame(width: 80, height: 35)
+                .background(Color.black.opacity(0.5))
+                .foregroundColor(.white)
+                .cornerRadius(18)
+            }
+          }
+          .padding()
         }
       }
     }
-    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-    .frame(height: 335)
-    .padding([.bottom, .horizontal])
   }
 }
 
